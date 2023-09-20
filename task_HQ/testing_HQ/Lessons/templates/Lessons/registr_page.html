@@ -1,0 +1,11 @@
+{% extends "Lessons/mainpage.html" %}
+
+{% block title %} Страница регистрации {% endblock %}
+
+{% block content %}
+<form method = "post">
+{% csrf_token %}
+    {{ form1.as_p }}
+    <p><input type = 'submit' value = 'Зарегистрироваться'>
+</form>
+{% endblock %}

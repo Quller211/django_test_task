@@ -1,0 +1,11 @@
+{% extends "Lessons/mainpage.html" %}
+
+{% block title %} Список уроков {% endblock %}
+
+{% block content %}
+    <div>
+        {% for z in content %}
+        <p><a href = "{% url 'lesson_detail' log_id product_id z.id %}">{{ z }}</a></p><hr>
+        {% endfor %}
+    </div>
+{% endblock %}

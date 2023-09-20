@@ -1,0 +1,11 @@
+{% extends "Lessons/mainpage.html" %}
+
+{% block title %} Детали урока {% endblock %}
+
+{% block content %}
+    <div>
+        {{ content.lesson_name }}<br>
+        <video src = {{ content.url_video }}></video><br>
+        {{ content.status_from_user }}<br>
+    </div>
+{% endblock %}
