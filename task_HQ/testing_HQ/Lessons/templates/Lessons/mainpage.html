@@ -7,6 +7,12 @@
 </head>
 <body>
     <div>
+        {% if request.user.is_authenticated %}
+            <div style = 'text-align: right;'>{{ user.username }}</div>
+            <div style = 'text-align: right;'><a href = '{% url "mainpage" %}'>Выйти</a></div>
+        {% endif %}
+    </div>
+    <div>
         {% block content %}
         <form method = "post">
             {% csrf_token %}

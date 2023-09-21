@@ -33,11 +33,11 @@ def registr_page(request):
     return render(request, 'Lessons/registr_page.html', {'form1': form1})
 
 def list_of_products(request, log_id):
-    content = Product.objects.all()
+    content = Product.objects.filter(user_access__id = log_id)
     return render(request, 'Lessons/list_of_products.html', {'content': content, 'log_id': log_id})
 
 def list_of_lessons(request, log_id, product_id):
-    content = Product.objects.get(id = product_id).lesson_to_product.all()
+    content = LessonTopic.objects.filter(lesson_to_product__id = product_id)
     return render(request, 'Lessons/list_of_lessons.html', {'content': content, 'log_id': log_id, 'product_id': product_id})
 
 def lesson_detail(request, log_id, product_id, lesson_id):

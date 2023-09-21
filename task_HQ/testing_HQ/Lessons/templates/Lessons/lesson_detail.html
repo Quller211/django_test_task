@@ -5,7 +5,6 @@
 {% block content %}
     <div>
         {{ content.lesson_name }}<br>
-        <video src = {{ content.url_video }}></video><br>
-        {{ content.status_from_user }}<br>
+        <iframe width="1788" height="1015" src={{ content.video_url }} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 {% endblock %}
